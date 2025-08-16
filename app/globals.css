@@ -1,0 +1,391 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Ensure backdrop-filter support */
+  @supports (backdrop-filter: blur(10px)) {
+    .backdrop-blur-xl {
+      backdrop-filter: blur(16px);
+    }
+    .backdrop-blur-lg {
+      backdrop-filter: blur(12px);
+    }
+    .backdrop-blur-md {
+      backdrop-filter: blur(8px);
+    }
+    .backdrop-blur-sm {
+      backdrop-filter: blur(4px);
+    }
+  }
+}
+
+@layer components {
+  /* ✨ Advanced Button Styles */
+  .btn-primary {
+    @apply bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-white bg-opacity-10 backdrop-blur-md hover:bg-opacity-20 text-white font-semibold py-3 px-6 rounded-2xl transition-all duration-300 border border-white border-opacity-20;
+  }
+
+  .btn-success {
+    @apply bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-3 px-6 rounded-2xl transition-all duration-300 shadow-lg;
+  }
+
+  .btn-danger {
+    @apply bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-2xl transition-all duration-300 shadow-lg;
+  }
+  
+  /* ✨ Glassmorphism Card Styles */
+  .card {
+    @apply bg-white bg-opacity-10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white border-opacity-20 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply card hover:bg-opacity-20 hover:shadow-3xl hover:scale-105;
+  }
+
+  .card-solid {
+    @apply bg-white rounded-2xl shadow-xl border border-gray-100 transition-all duration-300;
+  }
+  
+  /* ✨ Enhanced Input Styles - Landing Page (Glass Effect) */
+  .input-field {
+    @apply w-full p-4 bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl placeholder-white placeholder-opacity-70 text-white font-semibold focus:outline-none focus:ring-2 focus:ring-pink-300 focus:bg-opacity-30 transition-all duration-300 border border-white border-opacity-20;
+  }
+
+  .input-field-solid {
+    @apply w-full p-4 bg-white rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-gray-900;
+  }
+
+  /* ✨ NEW: Dashboard Form Inputs (Dark Text on Light Background) */
+  .form-input {
+    @apply w-full p-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 font-medium;
+  }
+
+  .form-textarea {
+  @apply w-full p-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 resize-y min-h-[120px] font-medium;
+}
+
+  .form-select {
+    @apply w-full p-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 cursor-pointer font-medium;
+  }
+
+  .form-label {
+    @apply block text-sm font-semibold text-gray-700 mb-2;
+  }
+
+  .input-error {
+    @apply border-red-400 focus:ring-red-400 focus:border-red-400;
+  }
+
+  /* ✨ Advanced Badge Styles */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-primary {
+    @apply badge bg-blue-100 text-blue-800 border border-blue-200;
+  }
+
+  .badge-success {
+    @apply badge bg-green-100 text-green-800 border border-green-200;
+  }
+
+  .badge-warning {
+    @apply badge bg-yellow-100 text-yellow-800 border border-yellow-200;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-100 text-red-800 border border-red-200;
+  }
+
+  .badge-glass {
+    @apply badge bg-white bg-opacity-20 text-white border border-white border-opacity-30 backdrop-blur-sm;
+  }
+
+  /* ✨ Loading States */
+  .loading-skeleton {
+    @apply animate-pulse bg-gray-200 rounded-lg;
+  }
+
+  .loading-skeleton-dark {
+    @apply animate-pulse bg-white bg-opacity-20 rounded-lg;
+  }
+
+  /* ✨ Gradient Backgrounds */
+  .gradient-bg {
+    @apply bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-pink-400 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  /* ✨ Glass Effects */
+  .glass-effect {
+    @apply bg-white bg-opacity-10 backdrop-blur-xl border border-white border-opacity-20;
+  }
+
+  .glass-strong {
+    @apply bg-white bg-opacity-20 backdrop-blur-2xl border border-white border-opacity-30;
+  }
+
+  /* ✨ Focus States */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-pink-300 focus:ring-offset-2;
+  }
+
+  .focus-ring-white {
+    @apply focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50;
+  }
+}
+
+/* ✨ Enhanced Animations */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-20px) rotate(1deg); 
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.6), 0 0 60px rgba(236, 72, 153, 0.3);
+  }
+}
+
+@keyframes gradient-shift {
+  0% { 
+    background-position: 0% 50%; 
+  }
+  50% { 
+    background-position: 100% 50%; 
+  }
+  100% { 
+    background-position: 0% 50%; 
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ✨ Animation Classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ✨ Enhanced Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(236, 72, 153, 0.6), rgba(147, 51, 234, 0.6));
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(236, 72, 153, 0.8), rgba(147, 51, 234, 0.8));
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(236, 72, 153, 0.6) rgba(255, 255, 255, 0.1);
+}
+
+/* ✨ Mobile Optimizations */
+@media (max-width: 640px) {
+  .card {
+    @apply mx-2 rounded-2xl;
+  }
+  
+  .input-field {
+    @apply text-base; /* Prevents zoom on iOS */
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    @apply py-4 text-base;
+  }
+
+  /* Larger touch targets for mobile */
+  button {
+    min-height: 44px;
+  }
+}
+
+/* ✨ Responsive Typography */
+.responsive-text {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+.responsive-title {
+  font-size: clamp(2rem, 8vw, 4rem);
+}
+
+/* 🔧 CRITICAL FIX: Force Dark Text in Dashboard Forms */
+/* This ensures all form inputs have visible dark text on light backgrounds */
+.dashboard input[type="text"],
+.dashboard input[type="email"], 
+.dashboard input[type="password"],
+.dashboard input[type="number"],
+.dashboard input[type="tel"],
+.dashboard textarea,
+.dashboard select,
+input:not([class*="bg-white"]):not([class*="bg-opacity"]),
+textarea:not([class*="bg-white"]):not([class*="bg-opacity"]),
+select:not([class*="bg-white"]):not([class*="bg-opacity"]) {
+  color: #1f2937 !important; /* Dark gray text */
+  background-color: white !important;
+  border: 1px solid #d1d5db !important; /* Light gray border */
+}
+
+.dashboard input:focus,
+.dashboard textarea:focus,
+.dashboard select:focus,
+input:not([class*="bg-white"]):focus,
+textarea:not([class*="bg-white"]):focus,
+select:not([class*="bg-white"]):focus {
+  color: #111827 !important; /* Even darker on focus */
+  border-color: #3b82f6 !important; /* Blue border on focus */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Keep placeholder text visible and readable */
+.dashboard input::placeholder,
+.dashboard textarea::placeholder,
+input:not([class*="bg-white"])::placeholder,
+textarea:not([class*="bg-white"])::placeholder {
+  color: #6b7280 !important; /* Gray placeholder */
+  opacity: 0.8 !important;
+}
+
+/* Override any conflicting Tailwind classes for dashboard forms */
+.dashboard .text-white {
+  color: #1f2937 !important;
+}
+
+/* Special handling for category selection buttons */
+.category-button {
+  @apply p-4 border-2 rounded-lg text-center cursor-pointer transition-all duration-200 hover:shadow-md;
+}
+
+.category-button.selected {
+  @apply border-blue-500 bg-blue-50 text-blue-700;
+}
+
+.category-button:not(.selected) {
+  @apply border-gray-300 bg-white text-gray-700 hover:border-gray-400;
+}
+
+/* Priority level buttons */
+.priority-button {
+  @apply p-3 border-2 rounded-lg cursor-pointer transition-all duration-200 font-medium;
+}
+
+.priority-button.selected.low {
+  @apply border-green-500 bg-green-50 text-green-700;
+}
+
+.priority-button.selected.medium {
+  @apply border-yellow-500 bg-yellow-50 text-yellow-700;
+}
+
+.priority-button.selected.high {
+  @apply border-red-500 bg-red-50 text-red-700;
+}
+
+.priority-button:not(.selected) {
+  @apply border-gray-300 bg-white text-gray-700 hover:border-gray-400;
+}
